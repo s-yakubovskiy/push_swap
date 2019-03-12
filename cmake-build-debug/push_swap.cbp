@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="push_swap"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/yharwyn-/edu/push_swap/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/yharwyn-/edu/push_swap/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/yharwyn-/edu/push_swap/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="push_swap">
+				<Option output="/Users/yharwyn-/edu/push_swap/cmake-build-debug/push_swap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yharwyn-/edu/push_swap/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/yharwyn-/edu/push_swap/."/>
+					<Add directory="/Users/yharwyn-/edu/push_swap/lib/printf"/>
+					<Add directory="/Users/yharwyn-/edu/push_swap/lib/printf/libft"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 push_swap"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="push_swap/fast">
+				<Option output="/Users/yharwyn-/edu/push_swap/cmake-build-debug/push_swap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yharwyn-/edu/push_swap/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/yharwyn-/edu/push_swap/."/>
+					<Add directory="/Users/yharwyn-/edu/push_swap/lib/printf"/>
+					<Add directory="/Users/yharwyn-/edu/push_swap/lib/printf/libft"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 push_swap/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yharwyn-/edu/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/author">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/flag_modifiers.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/float_functions.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_fldtoa_funcs.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_ftoa.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_im.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_ll.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_st.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_uh.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_uhh.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_ui.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_uim.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_itoa_ull.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_ldtoa.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_ntoa.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_printf.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ft_printf.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/helper_functions.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_atoi.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_bzero.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_colorize_str.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_isalnum.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_isalpha.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_isascii.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_isdigit.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_isprint.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_itoa.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstadd.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstchange.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstdel.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstdelone.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstiter.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstjoin.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstmap.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstnew.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_lstprint.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_make_lst.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memalloc.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memccpy.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memchr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memcmp.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memcpy.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memdel.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memmove.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_memset.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putchar.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putchar_fd.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putendl.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putendl_fd.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putnbr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putnbr_fd.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putstr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_putstr_fd.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strcat.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strchr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strclr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strcmp.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strcpy.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strdel.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strdup.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strequ.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_striter.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_striteri.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strjoin.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strlcat.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strlen.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strmap.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strmapi.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strncat.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strncmp.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strncpy.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strnequ.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strnew.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strnstr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strrchr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strsplit.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strstr.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strsub.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strsubi.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strtrim.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_strtrim_c.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_tolower.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_toupper.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/ft_word_count_c.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/libft/libft.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/ntoa_ox_modificators.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_char.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_float.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_floatfuncs.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_functions.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_int.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_int2.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_ld.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_oxp.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_string.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_string_colour.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/print_u.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/searchers.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/utilities.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/utilities2.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/validators.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/printf/zero_cases_xop.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/lib/privacy.sh">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/main.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/ps_commands.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/push_swap.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/ring_functions.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/src/rand.sh">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/src/scratch_tmp.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/validate.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/yharwyn-/edu/push_swap/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
