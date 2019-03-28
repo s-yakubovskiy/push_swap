@@ -6,11 +6,11 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 18:23:31 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:39:20 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/27 15:53:09 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char *argv[])
 {
@@ -32,5 +32,5 @@ int	main(int argc, char *argv[])
 	free(arr);
 	free(stack_a);
 	free(stack_b);
-	return(0);
+	return (0);
 }

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 18:23:31 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:39:20 by yharwyn-         ###   ########.fr       */
+/*   Created: 2019/03/27 11:48:24 by yharwyn-          #+#    #+#             */
+/*   Updated: 2019/03/27 15:41:48 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/push_swap.h"
+#include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	Ring	*stack_a;
-	Ring	*stack_b;
 	int		*arr;
 	int		size;
-	short	flag;
+	Ring	*stack_a;
+	Ring	*stack_b;
+	char	*str;
 
-	size = 0;
-	arr = make_arr(argv, argc, &size, &flag);
+	str = NULL;
 	stack_a = createRing();
 	stack_b = createRing();
+	arr = make_arr(argv, argc, &size, &stack_a->bit);
 	create_ring_stack(&stack_a, arr, size);
-	quicksort(arr, 0, size - 1);
-	(*stack_a).sort = arr;
-	algorithm_pre(&stack_a, &stack_b, arr, size);
-	free_memory(&stack_a, &stack_b, size);
-	free(arr);
-	free(stack_a);
-	free(stack_b);
-	return(0);
+	checker_one(&stack_a, &stack_b, stack_a->bit, str);
+
+	return (0);
 }

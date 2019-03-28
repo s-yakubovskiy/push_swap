@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: agottlie <agottlie@student.42.fr>          +#+  +:+       +#+         #
+#    By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/20 12:12:25 by agottlie          #+#    #+#              #
-#    Updated: 2018/12/06 13:56:00 by agottlie         ###   ########.fr        #
+#    Updated: 2019/03/27 11:54:13 by yharwyn-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC =	ft_*.c
+SRC =	*.c
 
-OBJ = 	ft_*.o
+OBJ = 	*.o
 
 INC = libft.h
 

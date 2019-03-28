@@ -6,7 +6,7 @@ SRCS = *.c
 
 OBJ = *.o
 
-OBJ2 = libft/ft_*.o
+OBJ2 = libft/*.o
 
 FLAGS = -Wall -Wextra -Werror
 
