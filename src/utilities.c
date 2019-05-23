@@ -6,13 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/27 14:43:41 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:49:46 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:32:26 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int if_atoif_f(unsigned long int res, int sign)
+static int	if_atoif_f(unsigned long int res, int sign)
 {
 	if (res == 2147483648 && sign < 0)
 		return (-2147483648);
@@ -20,7 +20,7 @@ static int if_atoif_f(unsigned long int res, int sign)
 		return (-1);
 }
 
-int		ft_atoi_true(const char *str)
+int			ft_atoi_true(const char *str)
 {
 	int					i;
 	unsigned long long	res;
@@ -47,13 +47,15 @@ int		ft_atoi_true(const char *str)
 	return ((int)res * sign);
 }
 
-void	print_node(Ring **root)
+void		print_node(t_ring **root)
 {
-	Node *current_node;
+	t_elem *current_node;
+
 	current_node = (*root)->current;
 	if ((*root)->current == NULL)
 		return ;
-	while (current_node->next != (*root)->current && (*root)->current->next != NULL)
+	while (current_node->next != (*root)->current
+	&& (*root)->current->next != NULL)
 	{
 		printf("%d ", current_node->num);
 		current_node = current_node->next;
@@ -61,8 +63,7 @@ void	print_node(Ring **root)
 	printf("%d ", current_node->num);
 }
 
-
-void	ft_swap_int(int *a, int *b)
+void		ft_swap_int(int *a, int *b)
 {
 	int c;
 
@@ -71,9 +72,9 @@ void	ft_swap_int(int *a, int *b)
 	*b = c;
 }
 
-void	python_parser(Ring *stack_a, Ring *stack_b)
+void		python_parser(t_ring *stack_a, t_ring *stack_b)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		size;
 
 	ptr = stack_a->current;

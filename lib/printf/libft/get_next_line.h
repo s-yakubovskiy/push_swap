@@ -6,7 +6,7 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 10:44:20 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 11:30:06 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/04/14 10:10:24 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,11 @@
 # include "libft.h"
 
 # define BUFF_SIZE 128
+# define MALLCHECK(x) if (!x) return (-1);
 
 # if (BUFF_SIZE <= 0)
 #  error BUFF_SIZE must be > 0
 # endif
-
-typedef struct		s_node
-{
-	char			*data;
-	int				fd;
-	struct s_node	*next;
-}					t_node;
-
-
-// typedef struct		s_ttr
-// {
-	
-// }
-
-
-
 
 int					get_next_line(const int fd, char **line);
 

@@ -6,13 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:16:06 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 16:28:09 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 09:13:22 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	top_min1(Ring **stack_a, Ring **stack_b)
+static void	top_min1(t_ring **stack_a, t_ring **stack_b)
 {
 	if ((*stack_a)->current->next->num == CUR_MIN)
 		sa(stack_a);
@@ -34,7 +34,7 @@ static void	top_min1(Ring **stack_a, Ring **stack_b)
 	}
 }
 
-static void	top_min2(Ring **stack_a, Ring **stack_b)
+static void	top_min2(t_ring **stack_a, t_ring **stack_b)
 {
 	if ((*stack_b)->current->div == '^')
 		(*stack_b)->current->next->div = '^';
@@ -55,7 +55,7 @@ static void	top_min2(Ring **stack_a, Ring **stack_b)
 	}
 }
 
-static void	top_min3(Ring **stack_a, Ring **stack_b)
+static void	top_min3(t_ring **stack_a, t_ring **stack_b)
 {
 	if (B_DIV_BOT == '$')
 		(*stack_b)->current->prev->prev->div = '$';
@@ -68,7 +68,7 @@ static void	top_min3(Ring **stack_a, Ring **stack_b)
 	((*stack_a)->sort)++;
 }
 
-static void	micropush(Ring **stack_a, Ring **stack_b)
+static void	micropush(t_ring **stack_a, t_ring **stack_b)
 {
 	pa(stack_a, stack_b);
 	ra(stack_a);
@@ -76,7 +76,7 @@ static void	micropush(Ring **stack_a, Ring **stack_b)
 	A_DIV_BOT = '$';
 }
 
-void		check_if_top_min(Ring **stack_a, Ring **stack_b)
+void		check_if_top_min(t_ring **stack_a, t_ring **stack_b)
 {
 	if (B_SIZE != 0)
 	{

@@ -6,15 +6,15 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:56:25 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:49:10 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 15:42:18 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	list2arr_light(Ring **root, int *median)
+void	list2arr_light(t_ring **root, int *median)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		i;
 	int		len;
 	int		*q_sorted;
@@ -29,18 +29,18 @@ void	list2arr_light(Ring **root, int *median)
 		ptr = ptr->next;
 	}
 	quicksort(q_sorted, 0, len - 1);
-	if EVEN(len)
+	if (EVEN(len))
 		*median = q_sorted[(len / 2) - 1];
 	else
 		*median = q_sorted[len / 2];
 	free(q_sorted);
 }
 
-void	list2arr_from_bot_light(Ring **root, int *median, int *deep)
+void	list2arr_from_bot_light(t_ring **root, int *median, int *deep)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		i;
-	int 	*q_sorted;
+	int		*q_sorted;
 
 	i = -1;
 	ptr = (*root)->current->prev;
@@ -51,16 +51,16 @@ void	list2arr_from_bot_light(Ring **root, int *median, int *deep)
 		ptr = ptr->prev;
 	}
 	quicksort(q_sorted, 0, (*deep) - 1);
-	if EVEN((*deep))
+	if (EVEN((*deep)))
 		*median = q_sorted[((*deep) / 2) - 1];
 	else
 		*median = q_sorted[(*deep) / 2];
 	free(q_sorted);
 }
 
-int	find_ends(Ring **root)
+int		find_ends(t_ring **root)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		i;
 	int		size;
 
@@ -76,7 +76,7 @@ int	find_ends(Ring **root)
 	return (-1);
 }
 
-int 	check_for_splits(Ring **stack_a, Ring **stack_b)
+int		check_for_splits(t_ring **stack_a, t_ring **stack_b)
 {
 	if (B_DIV == 'A' && B_DIV_BOT == 'A' && A_DIV == '^')
 	{

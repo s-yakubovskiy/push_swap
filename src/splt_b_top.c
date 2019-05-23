@@ -6,13 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 10:21:12 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:49:21 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:33:21 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void deep_checker(Ring **stack_a, Ring **stack_b, int *deep)
+static void	deep_checker(t_ring **stack_a, t_ring **stack_b, int *deep)
 {
 	if (*deep == 2 && A_DIV == '^' && A_DIV_BOT == '$')
 		check_if_top_min(stack_a, stack_b);
@@ -39,7 +39,7 @@ static void deep_checker(Ring **stack_a, Ring **stack_b, int *deep)
 	}
 }
 
-static void	deep_checker2(Ring **stack_a, Ring **stack_b, int *deep)
+static void	deep_checker2(t_ring **stack_a, t_ring **stack_b, int *deep)
 {
 	int		median;
 
@@ -62,7 +62,7 @@ static void	deep_checker2(Ring **stack_a, Ring **stack_b, int *deep)
 	check_if_top_min(stack_a, stack_b);
 }
 
-static void	deep_checker3(Ring **stack_a, Ring **stack_b, int *mem, char *c)
+static void	deep_checker3(t_ring **stack_a, t_ring **stack_b, int *mem, char *c)
 {
 	if (find_ends(stack_b) == -1)
 		B_DIV_BOT = '$';
@@ -75,19 +75,19 @@ static void	deep_checker3(Ring **stack_a, Ring **stack_b, int *mem, char *c)
 		B_DIV = '^';
 }
 
-void		split_b_top(Ring **stack_a, Ring **stack_b)
+void		split_b_top(t_ring **stack_a, t_ring **stack_b)
 {
 	int		deep;
 	int		mem;
 	char	c;
 
 	c = B_DIV;
-	mem = (*stack_b)->current->prev->num ;
+	mem = (*stack_b)->current->prev->num;
 	deep = deep_len_to_div(stack_b);
 	if (deep == B_SIZE)
 		mem = 0;
 	if (deep <= 5)
-		deep_checker(stack_a,stack_b, &deep);
+		deep_checker(stack_a, stack_b, &deep);
 	else
 	{
 		deep_checker2(stack_a, stack_b, &deep);

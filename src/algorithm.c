@@ -6,13 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:16:37 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:55:59 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:34:27 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		queer_sort(Ring **stack_a, Ring **stack_b)
+void		queer_sort(t_ring **stack_a, t_ring **stack_b)
 {
 	int			median;
 	int			eap;
@@ -35,7 +35,7 @@ void		queer_sort(Ring **stack_a, Ring **stack_b)
 		sort_three_a(stack_a);
 }
 
-void		queer_sort_b(Ring **stack_a, Ring **stack_b)
+void		queer_sort_b(t_ring **stack_a, t_ring **stack_b)
 {
 	int		i;
 
@@ -61,26 +61,38 @@ void		queer_sort_b(Ring **stack_a, Ring **stack_b)
 	check_if_top_min(stack_a, stack_b);
 }
 
-static void	print_stats(Ring **stack)
+static void	three_sort_fast(t_ring **stack_a)
 {
-	int		i;
-	int		size;
-	Node	*ptr;
-
-	ptr = (*stack)->current;
-	i = -1;
-	size = (*stack)->size;
-	ft_printf("\n");
-	while (++i < size)
+	if ((*stack_a)->current->prev->num == CUR_MIN)
 	{
-		ft_printf("|  %5c     |     %5d     |\n", ptr->div, ptr->num);
-		ptr = ptr->next;
+		if (A_TOP > (*stack_a)->current->next->num)
+			sa(stack_a);
+		rra(stack_a);
+	}
+	else if (A_TOP == CUR_MIN)
+	{
+		if ((*stack_a)->current->prev->num < (*stack_a)->current->next->num)
+		{
+			ra(stack_a);
+			sa(stack_a);
+			rra(stack_a);
+		}
+	}
+	else
+	{
+		if (A_TOP < (*stack_a)->current->prev->num)
+			sa(stack_a);
+		else
+			ra(stack_a);
 	}
 }
 
-void		algorithm_pre(Ring **stack_a, Ring **stack_b, int *arr, int size)
+void		algorithm_pre(t_ring **stack_a, t_ring **stack_b,
+		int *arr, int size)
 {
-	if (size >= 3)
+	if (check_a_stack_sorted(stack_a, stack_b) == 1)
+		return ;
+	if (size > 3)
 	{
 		queer_sort(stack_a, stack_b);
 		find_min_index(stack_a);
@@ -90,7 +102,12 @@ void		algorithm_pre(Ring **stack_a, Ring **stack_b, int *arr, int size)
 	{
 		if (arr == NULL)
 			exit(-9);
-		if (size == 1)
+		if (size == 3)
+		{
+			three_sort_fast(stack_a);
+			return ;
+		}
+		else if (size == 1)
 			;
 		else if (size == 2)
 			if (A_TOP > (*stack_a)->current->next->num)

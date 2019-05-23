@@ -6,7 +6,7 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 15:41:22 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 16:52:24 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/31 07:57:51 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,55 +50,54 @@
 ** 		STRUCTS
 */
 
-typedef struct		g_Node
+typedef struct		s_elem
 {
 	int				num;
 	int				size;
 	char			div;
-	struct g_Node	*prev;
-	struct g_Node	*next;
-}					Node;
+	struct s_elem	*prev;
+	struct s_elem	*next;
+}					t_elem;
 
-typedef struct		g_Ring
+typedef struct		s_ring
 {
-	unsigned int	size;
+	int				size;
 	int				*sort;
 	short			bit;
-	Node			*current;
-}					Ring;
+	t_elem			*current;
+}					t_ring;
 
 /*
 ** 		NODE FUNCTIONS
 */
 
-Ring*				createRing(void);
-int					push_back(Ring **ring, int num);
-int					push_top(Ring **ring, int num, char div);
-Node				*create_node(int num);
-void				print_node(Ring **root);
-Ring				*rm_node(Ring **root);
-void				create_ring_stack(Ring **root, int *arr, int size);
+t_ring				*create_ring(void);
+int					push_back(t_ring **ring, int num);
+int					push_top(t_ring **ring, int num, char div);
+t_elem				*create_node(int num);
+t_ring				*rm_node(t_ring **root);
+void				create_ring_stack(t_ring **root, int *arr, int size);
 
 /*
 ** 		PUSH_SWAP FUNCS
 */
 
-void				ra(Ring **root);
-void				rra(Ring **root);
-void				rb(Ring **root);
-void				rrb(Ring **root);
-void				sa(Ring **root);
-void				sb(Ring **root);
-void				pb(Ring **stack_a, Ring **stack_b);
-void				pa(Ring **stack_a, Ring **stack_b);
-void				ra_(Ring **root);
-void				rra_(Ring **root);
-void				rb_(Ring **root);
-void				rrb_(Ring **root);
-void				sa_(Ring **root);
-void				sb_(Ring **root);
-void				pb_(Ring **stack_a, Ring **stack_b);
-void				pa_(Ring **stack_a, Ring **stack_b);
+void				ra(t_ring **root);
+void				rra(t_ring **root);
+void				rb(t_ring **root);
+void				rrb(t_ring **root);
+void				sa(t_ring **root);
+void				sb(t_ring **root);
+void				pb(t_ring **stack_a, t_ring **stack_b);
+void				pa(t_ring **stack_a, t_ring **stack_b);
+void				ra_(t_ring **root);
+void				rra_(t_ring **root);
+void				rb_(t_ring **root);
+void				rrb_(t_ring **root);
+void				sa_(t_ring **root);
+void				sb_(t_ring **root);
+void				pb_(t_ring **stack_a, t_ring **stack_b);
+void				pa_(t_ring **stack_a, t_ring **stack_b);
 
 /*
 ** 		VALIDATE_FUNCS
@@ -112,50 +111,54 @@ int					*check_duplicate(int *arr, int size);
 ** 		ALGORITHM_FUNCS
 */
 
-void				algorithm_pre(Ring **stack_a, Ring **stack_b, int *arr, int size);
-void				list2arr(Ring **root, int *median, int *eap);
-void				sort_three_a(Ring **stack);
-void				queer_sort_b(Ring **stack_a, Ring **stack_b);
-void				find_minmax(Ring **stack, int *min, int *max);
-void				split_half(Ring **stack_a, Ring **stack_b, int median, int eap);
-void				queer_sort(Ring **stack_a, Ring **stack_b);
+void				algorithm_pre(t_ring **stack_a, t_ring **stack_b, int *arr,
+		int size);
+void				list2arr(t_ring **root, int *median, int *eap);
+void				sort_three_a(t_ring **stack);
+void				queer_sort_b(t_ring **stack_a, t_ring **stack_b);
+void				find_minmax(t_ring **stack, int *min, int *max);
+void				split_half(t_ring **stack_a, t_ring **stack_b, int median,
+		int eap);
+void				queer_sort(t_ring **stack_a, t_ring **stack_b);
+void				ss_(t_ring **stack_a, t_ring **stack_b);
+void				rr_(t_ring **stack_a, t_ring **stack_b);
+void				rrr_(t_ring **stack_a, t_ring **stack_b);
 
 /*
 ** 		ALGORITHM_2_FUNCS
 */
 
-void				split_b_top(Ring **stack_a, Ring **stack_b);
-void				split_b_bot(Ring **stack_a, Ring **stack_b);
-void				split_a_top(Ring **stack_a, Ring **stack_b);
+void				split_b_top(t_ring **stack_a, t_ring **stack_b);
+void				split_b_bot(t_ring **stack_a, t_ring **stack_b);
+void				split_a_top(t_ring **stack_a, t_ring **stack_b);
 
 /*
 ** 		AUX FUNCS
 */
 
 void				ft_swap_int(int *a, int *b);
-void				print_arr(int *arr, int size);
 void				quicksort(int *arr, int start, int end);
 int					partition_hoare(int *arr, int start, int end);
-void				print_stacks(Ring *stack_a, Ring *stack_b);
-void				find_min_index(Ring **stack_a);
-int					deep_len_to_div_up(Ring **stack_b);
-int					deep_len_to_div(Ring **stack);
-void				check_if_top_min(Ring **stack_a, Ring **stack_b);
-void				free_memory(Ring **stack_a, Ring **stack_b, int len);
-void				check_stack_a(Ring **stack_a);
-int					check_A_stack_sorted(Ring **stack_a);
-void				python_parser(Ring *stack_a, Ring *stack_b);
+void				print_stacks(t_ring *stack_a, t_ring *stack_b);
+void				find_min_index(t_ring **stack_a);
+int					deep_len_to_div_up(t_ring **stack_b);
+int					deep_len_to_div(t_ring **stack);
+void				check_if_top_min(t_ring **stack_a, t_ring **stack_b);
+void				free_memory(t_ring **stack_a, t_ring **stack_b);
+void				check_stack_a(t_ring **stack_a);
+int					check_a_stack_sorted(t_ring **stack_a, t_ring **stack_b);
+void				python_parser(t_ring *stack_a, t_ring *stack_b);
 
 /*
 ** 		SPLITS_CHECK_FUNCS
 */
 
-int					find_ends(Ring **root);
-void				list2arr_from_bot_light(Ring **root, 
+int					find_ends(t_ring **root);
+void				list2arr_from_bot_light(t_ring **root,
 	int *median, int *deep);
-void				list2arr_light(Ring **root, int *median);
-int					check_for_splits(Ring **stack_a, Ring **stack_b);
-void				checker_one(Ring **stack_a, Ring **stack_b, 
+void				list2arr_light(t_ring **root, int *median);
+int					check_for_splits(t_ring **stack_a, t_ring **stack_b);
+void				checker_one(t_ring **stack_a, t_ring **stack_b,
 	short flag, char *str);
 int					ft_atoi_true(const char *str);
 

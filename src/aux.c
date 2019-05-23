@@ -6,16 +6,16 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:16:15 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 16:15:53 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/31 08:38:39 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	print_stacks_ext(Ring *stack_a, Ring *stack_b, int min, int max)
+static void	print_stacks_ext(t_ring *stack_a, t_ring *stack_b, int min, int max)
 {
-	Node	*ptr1;
-	Node	*ptr2;
+	t_elem	*ptr1;
+	t_elem	*ptr2;
 
 	ptr1 = stack_a->current;
 	ptr2 = stack_b->current;
@@ -36,8 +36,8 @@ static void	print_stacks_ext(Ring *stack_a, Ring *stack_b, int min, int max)
 	}
 }
 
-static void	print_stacks_ext2(Ring *stack_a, Ring *stack_b,
-		Node **ptr1, Node **ptr2)
+static void	print_stacks_ext2(t_ring *stack_a, t_ring *stack_b,
+		t_elem **ptr1, t_elem **ptr2)
 {
 	int		max;
 	int		min;
@@ -64,12 +64,10 @@ static void	print_stacks_ext2(Ring *stack_a, Ring *stack_b,
 		print_stacks_ext(stack_a, stack_b, min, max);
 }
 
-void		print_stacks(Ring *stack_a, Ring *stack_b)
+void		print_stacks(t_ring *stack_a, t_ring *stack_b)
 {
-	Node	*ptr1;
-	Node	*ptr2;
-	int		max;
-	int		min;
+	t_elem	*ptr1;
+	t_elem	*ptr2;
 
 	ft_printf(_C_"\n|%10s   |     |%10s  |\n"_R_,
 			"STACK_A", "STACK_B");
@@ -78,10 +76,10 @@ void		print_stacks(Ring *stack_a, Ring *stack_b)
 	print_stacks_ext2(stack_a, stack_b, &ptr1, &ptr2);
 }
 
-void		find_minmax(Ring **stack, int *min, int *max)
+void		find_minmax(t_ring **stack, int *min, int *max)
 {
-	int		i;
-	Node	*ptr;
+	int					i;
+	t_elem				*ptr;
 
 	i = 0;
 	ptr = TOP(*stack);
@@ -96,13 +94,29 @@ void		find_minmax(Ring **stack, int *min, int *max)
 	}
 }
 
-void		print_arr(int *arr, int size)
+int			*check_duplicate(int *arr, int size)
 {
 	int		i;
+	int		j;
+	int		k;
 
-	if (arr == NULL)
-		return ;
-	i = -1;
+	i = 0;
+	k = 0;
+	j = 0;
 	while (++i < size)
-		ft_printf("%d ", arr[i]);
+	{
+		j = arr[i];
+		while (k < size - 1)
+		{
+			if (arr[k] == j && k != i)
+			{
+				ft_printf(_C_ "Error\n"_R_);
+				ft_memdel((void **)&arr);
+				exit(88);
+			}
+			k++;
+		}
+		k = 0;
+	}
+	return (arr);
 }

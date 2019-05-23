@@ -6,15 +6,15 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 10:22:17 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:49:02 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/31 08:25:26 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void deep_checker_b(Ring **stack_a, Ring **stack_b, int *deep)
+static void	deep_checker_b(t_ring **stack_a, t_ring **stack_b, int *deep)
 {
-	if (*deep == 2 )
+	if (*deep == 2)
 	{
 		rrb(stack_b);
 		rrb(stack_b);
@@ -26,7 +26,8 @@ static void deep_checker_b(Ring **stack_a, Ring **stack_b, int *deep)
 	check_if_top_min(stack_a, stack_b);
 }
 
-static void sort_lot_b(Ring **stack_a, Ring **stack_b, int *deep, int median)
+static void	sort_lot_b(t_ring **stack_a, t_ring **stack_b,
+		int *deep, int median)
 {
 	list2arr_from_bot_light(stack_b, &median, &(*deep));
 	while (B_DIV_BOT != '$' && B_DIV_BOT != 'A')
@@ -55,7 +56,7 @@ static void sort_lot_b(Ring **stack_a, Ring **stack_b, int *deep, int median)
 	}
 }
 
-void	split_b_bot(Ring **stack_a, Ring **stack_b)
+void		split_b_bot(t_ring **stack_a, t_ring **stack_b)
 {
 	int		median;
 	int		deep;
@@ -81,4 +82,16 @@ void	split_b_bot(Ring **stack_a, Ring **stack_b)
 		else
 			B_DIV = 'A';
 	}
+}
+
+void		find_min_index(t_ring **stack_a)
+{
+	int		min;
+
+	min = (*stack_a)->current->prev->num;
+	while (min != *(*stack_a)->sort)
+	{
+		((*stack_a)->sort)++;
+	}
+	((*stack_a)->sort)++;
 }

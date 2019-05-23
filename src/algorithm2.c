@@ -6,13 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:33:27 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 16:13:37 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 09:13:06 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		split_half(Ring **stack_a, Ring **stack_b, int median, int eap)
+void		split_half(t_ring **stack_a, t_ring **stack_b, int median, int eap)
 {
 	while (eap > 0)
 	{
@@ -27,7 +27,7 @@ void		split_half(Ring **stack_a, Ring **stack_b, int median, int eap)
 	(*stack_b)->current->div = 'A';
 }
 
-static void	sort_three_a2(Ring **stack, int min, int max, Node *ptr)
+static void	sort_three_a2(t_ring **stack, int min, int max, t_elem *ptr)
 {
 	if (ptr->num == max)
 	{
@@ -50,9 +50,9 @@ static void	sort_three_a2(Ring **stack, int min, int max, Node *ptr)
 	}
 }
 
-void		sort_three_a(Ring **stack)
+void		sort_three_a(t_ring **stack)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		min;
 	int		max;
 

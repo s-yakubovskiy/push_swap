@@ -13,7 +13,7 @@ CHECKER_BIN = checker
 # GCC COMPILATOR PART CONF
 
 CC = gcc
-FLAGS = 
+FLAGS = -Wall -Wextra -Werror
 LIBRARIES = -lft -L$(PRINTF_DIR)
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(PRINTF_HEADERS)ft_printf.h
 
@@ -41,6 +41,7 @@ SRC_LST = 	algorithm.c\
 	ps_commands2.c\
 	ps_commands3.c\
 	ps_commands4.c\
+	ps_commands5.c\
 	ring_functions.c\
 	split_a_top.c\
 	split_b_bot.c\

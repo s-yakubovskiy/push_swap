@@ -6,13 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 10:22:44 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:48:44 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 15:38:05 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	deep_a_top(Ring **stack_a, Ring **stack_b, int *deep)
+static void	deep_a_top(t_ring **stack_a, t_ring **stack_b, int *deep)
 {
 	if ((*deep) == 2)
 		check_if_top_min(stack_a, stack_b);
@@ -40,7 +40,18 @@ static void	deep_a_top(Ring **stack_a, Ring **stack_b, int *deep)
 	}
 }
 
-static void	deep_a_top_lot(Ring **stack_a, Ring **stack_b, int *median)
+static void	deep_a2(t_ring **stack_a, t_ring **stack_b, int *median)
+{
+	if ((*stack_a)->current->num <= *median)
+		pb(stack_a, stack_b);
+	else
+	{
+		pb(stack_a, stack_b);
+		rb(stack_b);
+	}
+}
+
+static void	deep_a_top_lot(t_ring **stack_a, t_ring **stack_b, int *median)
 {
 	while (A_DIV != '^')
 	{
@@ -58,19 +69,11 @@ static void	deep_a_top_lot(Ring **stack_a, Ring **stack_b, int *median)
 			((*stack_a)->sort)++;
 		}
 		else
-		{
-			if ((*stack_a)->current->num <= *median)
-				pb(stack_a, stack_b);
-			else
-			{
-				pb(stack_a, stack_b);
-				rb(stack_b);
-			}
-		}
+			deep_a2(stack_a, stack_b, median);
 	}
 }
 
-static void	deep_a_check_if(Ring **stack_a, Ring **stack_b, int mem, int mem2)
+static void	deep_a_check_if(t_ring **stack_b, int mem, int mem2)
 {
 	if (mem2 != B_TOP)
 		B_DIV = 'A';
@@ -80,7 +83,8 @@ static void	deep_a_check_if(Ring **stack_a, Ring **stack_b, int mem, int mem2)
 	else
 		B_DIV_BOT = 'A';
 }
-void	split_a_top(Ring **stack_a, Ring **stack_b)
+
+void		split_a_top(t_ring **stack_a, t_ring **stack_b)
 {
 	int		median;
 	int		deep;
@@ -103,6 +107,6 @@ void	split_a_top(Ring **stack_a, Ring **stack_b)
 		list2arr_light(stack_a, &median);
 		deep_a_top_lot(stack_a, stack_b, &median);
 		check_if_top_min(stack_a, stack_b);
-		deep_a_check_if(stack_a, stack_b, mem, mem2);
+		deep_a_check_if(stack_b, mem, mem2);
 	}
 }

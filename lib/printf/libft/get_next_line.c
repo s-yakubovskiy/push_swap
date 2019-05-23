@@ -6,26 +6,14 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 14:14:27 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 11:54:13 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/04/14 11:59:32 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static t_node	*ft_lstnew_light(int fd)
-{
-	t_node		*root;
-
-	if (!(root = (t_node *)malloc(sizeof(t_node))))
-		return (NULL);
-	(fd >= 0) ? root->fd = fd : 0;
-	root->data = NULL;
-	root->next = NULL;
-	return (root);
-}
-
 static void		ft_datamerge_lst(t_node **root, char *data,
-	size_t start, size_t finish)
+									size_t start, size_t finish)
 {
 	t_node		*ptr;
 	size_t		i;
@@ -96,31 +84,41 @@ static int		gnl_workhorse(char **tmp, char *buff, char **line, int fd)
 	return (8);
 }
 
-int				get_next_line(const int fd, char **line)
+static int		gnl_ext(t_node *root, char **line, t_node *ptr, int fd)
 {
-	char			*tmp;
-	char			buff[BUFF_SIZE + 1];
-	static t_node	*root;
-	t_node			*ptr;
-	int				n;
+	char	buff[BUFF_SIZE + 1];
+	char	*kek;
+	char	*tmp;
+	int		n;
 
-	if (root == NULL)
-	{
-		root = ft_check_fd(&root, fd);
-		ptr = root;
-	}
-	ptr = ft_check_fd(&root, fd);
 	tmp = ft_strnew(0);
 	if (ptr->data != NULL)
 	{
-		tmp = ft_strjoin(tmp, ptr->data);
+		kek = ft_strjoin(tmp, ptr->data);
+		ft_memdel((void **)&tmp);
+		tmp = kek;
 		ft_strdel(&ptr->data);
 	}
 	if ((n = gnl_workhorse(&tmp, buff, line, fd)) != 8)
+	{
+		free(tmp);
+		n < 1 ? ft_memdel((void **)&root) : 0;
 		return (n);
+	}
 	n = ft_strlen(tmp) - ft_strlen(ft_strchr(tmp, '\n'));
 	(*line) = ft_strsub(tmp, 0, (n));
 	ft_datamerge_lst(&ptr, (tmp + 1), (n), ft_strlen(tmp));
 	ft_strdel(&tmp);
 	return (1);
+}
+
+int				get_next_line(const int fd, char **line)
+{
+	static t_node	*root;
+	t_node			*ptr;
+
+	if (root == NULL)
+		root = ft_check_fd(&root, fd);
+	ptr = ft_check_fd(&root, fd);
+	return (gnl_ext(root, line, ptr, fd));
 }

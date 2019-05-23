@@ -6,39 +6,13 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:19:41 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:50:00 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/04/14 11:36:02 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		*check_duplicate(int *arr, int size)
-{
-	int		i;
-	int		j;
-	int		k;
-
-	i = 0;
-	k = 0;
-
-	while (++i < size)
-	{
-		j = arr[i];
-		while (k < size - 1)
-		{
-			if (arr[k] == j && k != i)
-			{
-				ft_printf(_C_ "Error\n"_R_);
-				exit (88);
-			}
-			k++;
-		}
-		k = 0;
-	}
-	return (arr);
-}
-
-static void str2num_ext(char *str, int *start, char *wd, int *i)
+static void	str2num_ext(char *str, int *start, char *wd, int *i)
 {
 	if (str[(*start)] == '-')
 	{
@@ -50,12 +24,13 @@ static void str2num_ext(char *str, int *start, char *wd, int *i)
 		else
 		{
 			ft_printf(_C_ "Error\n"_R_);
-			exit (59);
+			ft_memdel((void **)&wd);
+			exit(59);
 		}
 	}
 }
 
-int     	str2num(char *str, int *start)
+int			str2num(char *str, int *start)
 {
 	int		i;
 	char	*wd;
@@ -69,10 +44,15 @@ int     	str2num(char *str, int *start)
 		i++;
 		(*start)++;
 	}
+	if (str[*start] == '-')
+	{
+		ft_printf(_C_ "Error\n"_R_);
+		exit(55);
+	}
 	if (ft_strlen(wd) >= 10 && ft_atoi_true(wd) == -1)
 	{
 		ft_printf(_C_ "Error\n"_R_);
-		exit (56);
+		exit(56);
 	}
 	i = ft_atoi(wd);
 	free(wd);
@@ -82,16 +62,16 @@ int     	str2num(char *str, int *start)
 static void	check_conditions(char *argv[], short *flag, int argc, int *i)
 {
 	if (argc < 2)
-		exit (1);
+		exit(1);
 	else if (ft_strequ(argv[1], "-v") && ft_strequ(argv[2], "-o"))
 	{
 		*flag = 3;
-		(*i)+= 2;
+		(*i) += 2;
 	}
 	else if (ft_strequ(argv[1], "-v") && ft_strequ(argv[2], "-p"))
 	{
 		*flag = 4;
-		(*i)+= 2;
+		(*i) += 2;
 	}
 	else if (ft_strequ(argv[1], "-v"))
 	{
@@ -103,7 +83,19 @@ static void	check_conditions(char *argv[], short *flag, int argc, int *i)
 		*flag = 2;
 		(*i)++;
 	}
+}
 
+int			make_arr2(char *argv[], int *i, int *j, int *stack)
+{
+	if (argv[*i][*j] == '\0')
+		return (-1);
+	else if (!ISNUM(argv[*i][*j]) && argv[*i][*j] != '-')
+	{
+		ft_printf(_C_"Error\n"_R_);
+		ft_memdel((void **)&stack);
+		exit(55);
+	}
+	return (0);
 }
 
 int			*make_arr(char *argv[], int argc, int *size, short *flag)
@@ -113,22 +105,17 @@ int			*make_arr(char *argv[], int argc, int *size, short *flag)
 	int		j;
 
 	i = 0;
-	stack = malloc(sizeof(int) * 20000);
+	stack = ft_memalloc(sizeof(int) * 20000);
 	check_conditions(argv, flag, argc, &i);
-	while(++i < argc)
+	while (++i < argc)
 	{
 		j = 0;
-		while(argv[i][j])
+		while (argv[i][j])
 		{
 			while (ISSPACE(argv[i][j]) && argv[i][j] != '\0')
 				j++;
-			if (argv[i][j] == '\0')
+			if (make_arr2(argv, &i, &j, stack) == -1)
 				break ;
-			else if (!ISNUM(argv[i][j]) && argv[i][j] != '-')
-			{
-				ft_printf("Error\n");
-				exit(55);
-			}
 			stack[(*size)] = str2num(argv[i], &j);
 			(*size)++;
 		}

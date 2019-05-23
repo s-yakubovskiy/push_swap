@@ -6,29 +6,29 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:54:31 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 15:47:32 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:28:56 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-Ring* createRing(void)
+t_ring	*create_ring(void)
 {
-	Ring	*tmp;
+	t_ring	*tmp;
 
-	tmp = (Ring*)malloc(sizeof(Ring));
+	tmp = (t_ring*)malloc(sizeof(t_ring));
 	tmp->size = 1;
 	tmp->bit = 0;
 	tmp->current = NULL;
 	tmp->sort = NULL;
-
 	return (tmp);
 }
-Node	*create_node(int num)
-{
-	Node	*node;
 
-	node = malloc(sizeof(Node));
+t_elem	*create_node(int num)
+{
+	t_elem	*node;
+
+	node = malloc(sizeof(t_elem));
 	if (node == NULL)
 		return (NULL);
 	node->num = num;
@@ -39,10 +39,10 @@ Node	*create_node(int num)
 	return (node);
 }
 
-int		push_back(Ring **root, int num)
+int		push_back(t_ring **root, int num)
 {
-	Node	*node;
-	Node	*prev_node;
+	t_elem	*node;
+	t_elem	*prev_node;
 
 	prev_node = (*root)->current;
 	node = create_node(num);
@@ -66,10 +66,10 @@ int		push_back(Ring **root, int num)
 	return (0);
 }
 
-int		push_top(Ring **root, int num, char div)
+int		push_top(t_ring **root, int num, char div)
 {
-	Node	*node;
-	Node	*last;
+	t_elem	*node;
+	t_elem	*last;
 
 	node = create_node(num);
 	if ((*root)->current == NULL)
@@ -84,7 +84,8 @@ int		push_top(Ring **root, int num, char div)
 		last = (*root)->current->prev;
 		node->next = (*root)->current;
 		node->prev = last;
-		last->next = (*root)->current->prev = node;
+		(*root)->current->prev = node;
+		last->next = (*root)->current->prev;
 		(*root)->current = node;
 		(*root)->current->div = div;
 		(*root)->size++;
@@ -92,10 +93,10 @@ int		push_top(Ring **root, int num, char div)
 	return (0);
 }
 
-Ring	*rm_node(Ring **root)
+t_ring	*rm_node(t_ring **root)
 {
-	Node	*curr;
-	Node	*prev_1;
+	t_elem	*curr;
+	t_elem	*prev_1;
 
 	curr = (*root)->current;
 	if ((*root)->current == NULL)

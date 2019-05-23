@@ -6,25 +6,29 @@
 /*   By: yharwyn- <yharwyn-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 08:54:09 by yharwyn-          #+#    #+#             */
-/*   Updated: 2019/03/27 16:30:00 by yharwyn-         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:49:22 by yharwyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(Ring **root)
+void		rra(t_ring **root)
 {
-	Node *prev_node;
+	t_elem *prev_node;
 
+	if ((*root)->current == NULL)
+		return ;
 	prev_node = (*root)->current->prev;
 	(*root)->current = prev_node;
 	ft_printf("rra\n");
 }
 
-void	ra(Ring **root)
+void		ra(t_ring **root)
 {
-	Node *prev_node;
+	t_elem *prev_node;
 
+	if ((*root)->current == NULL)
+		return ;
 	prev_node = (*root)->current->next;
 	(*root)->current = prev_node;
 	ft_printf("ra\n");
@@ -32,7 +36,7 @@ void	ra(Ring **root)
 
 static void	median_helper(int *q_sorted, int *eap, int *median, int len)
 {
-	if EVEN(len)
+	if (EVEN(len))
 	{
 		*median = q_sorted[(len / 2) - 1];
 		*eap = len - (len / 2);
@@ -44,9 +48,9 @@ static void	median_helper(int *q_sorted, int *eap, int *median, int len)
 	}
 }
 
-void	list2arr(Ring **root, int *median, int *eap)
+void		list2arr(t_ring **root, int *median, int *eap)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		i;
 	int		len;
 	int		*q_sorted;
@@ -68,9 +72,9 @@ void	list2arr(Ring **root, int *median, int *eap)
 	free(q_sorted);
 }
 
-int 	check_A_stack_sorted(Ring **stack_a)
+int			check_a_stack_sorted(t_ring **stack_a, t_ring **stack_b)
 {
-	Node	*ptr;
+	t_elem	*ptr;
 	int		size;
 
 	ptr = (*stack_a)->current;
@@ -81,5 +85,8 @@ int 	check_A_stack_sorted(Ring **stack_a)
 			return (-1);
 		ptr = ptr->next;
 	}
-	return (1);
+	if (B_SIZE == 0 || (*stack_b)->current == NULL)
+		return (1);
+	else
+		return (-1);
 }
